@@ -94,7 +94,7 @@ main {
   /* color: var(--dark-text); */
 }
 
-.dogs-list__button--add {
+#dogs-list__button--add {
   font-size: 3rem;
 }
 

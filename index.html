@@ -10,12 +10,32 @@
   <body>
     <header>
       <ul id="dogs-list">
-        <li class="dogs-list__button dogs-list__button--add">+</li>
+        <li class="dogs-list__button" id="dogs-list__button--add">+</li>
       </ul>
     </header>
     <main>
       <section id="main__dog-section">
         <h2>No dogs ?!?</h2>
+        <div id="main__dog-section-form">
+          <form class="form">
+            <label for="name">Dog's name</label>
+            <input type="text" id="name" name="name" />
+
+            <label for="image">Dog's picture</label>
+            <input type="url" id="image" name="image" />
+
+            <label for="bio">Dog's bio</label>
+            <textarea rows="5" id="bio" name="bio"></textarea>
+
+            <input
+              type="submit"
+              id="submit"
+              name="submit"
+              value="Let's add a dog!"
+              class="form__button"
+            />
+          </form>
+        </div>
       </section>
     </main>
   </body>
@@ -41,24 +61,3 @@
         <p><em>Is naughty?</em> yes!</p>
         <button>Good dog!</button>
   </section>  -->
-
-<!-- 
-    This is a template for the add dog form
-
-    <section class="main__dog-section">
-      <h2>Add a new Dog</h2>
-      <form class="form">
-
-        <label for="name">Dog's name</label>
-        <input type="text" id="name" name="name">
-
-        <label for="image">Dog's picture</label>
-        <input type="url" id="image" name="image">
-
-        <label for="bio">Dog's bio</label>
-        <textarea rows="5" id="bio" name="bio"></textarea>
-
-        <input type="submit" id="submit" name="submit" value="Let's add a dog!" class="form__button">
-      </form>
-  </section>
-   -->
