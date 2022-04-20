@@ -39,7 +39,7 @@ img {
   text-align: center;
 }
 
-.dogs-list {
+#dogs-list {
   display: grid;
   grid-auto-columns: 150px;
   grid-auto-flow: column;
