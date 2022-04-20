@@ -7,6 +7,8 @@ dogCardContainer.style.display = "none";
 const dogName = document.querySelector("h2");
 const img = document.querySelector("img");
 const bioText = document.getElementById("bio-text");
+const isNaughty = document.getElementById("is-naughty");
+const dogBtn = document.getElementById("dogBtn");
 
 // form
 const addButton = document.getElementById("dogs-list__button--add");
@@ -50,9 +52,16 @@ form.addEventListener("submit", (event) => {
     isGoodDog: true,
     image: formImg.value,
   });
-
   const newDogListButton = document.createElement("li");
   newDogListButton.setAttribute("class", "dogs-list__button");
   newDogListButton.innerText = formName.value;
   dogsList.append(newDogListButton);
+});
+
+// ********* Extended ********* //
+dogBtn.addEventListener("click", () => {
+  data.forEach((dog) => {
+    dog.isGoodDog ? dog.isGoodDog === false : dog.isGoodDog === true;
+    console.log(dog.name, dog.isGoodDog);
+  });
 });
