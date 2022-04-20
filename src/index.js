@@ -10,6 +10,7 @@ img.style.display = "none";
 const dogListDescDiv = document.createElement("div");
 dogListDescDiv.setAttribute("class", "main__dog-section__desc");
 const bioTitle = document.createElement("h3");
+bioTitle.innerText = "Bio";
 const bioText = document.createElement("p");
 dogListDescDiv.style.display = "none";
 
@@ -17,7 +18,9 @@ dogListDescDiv.style.display = "none";
 const dogListBtnDiv = document.createElement("div");
 dogListBtnDiv.setAttribute("class", "main__dog-section__btn");
 const isNaughty = document.createElement("p");
+isNaughty.innerHTML = "<em>Is naughty?</em> yes!";
 const dogBtn = document.createElement("button");
+dogBtn.innerText = "Good dog";
 dogListBtnDiv.style.display = "none";
 
 // append all elements
@@ -36,12 +39,9 @@ data.forEach((dog) => {
   dogListButton.addEventListener("click", () => {
     img.style.display = "block";
     dogListDescDiv.style.display = "block";
-    dogListBtnDiv.style.display = "block";
+    dogListBtnDiv.style.display = "grid";
     dogName.innerText = dog.name;
     img.src = dog.image;
-    bioTitle.innerText = "Bio";
     bioText.innerText = dog.bio;
-    isNaughty.innerHTML = "<em>Is naughty?</em> yes!";
-    dogBtn.innerText = "Good dog";
   });
 });
