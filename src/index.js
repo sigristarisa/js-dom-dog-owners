@@ -1,6 +1,7 @@
 import createDogListItem from "./createDogListItem.js";
 import createDogCard from "./createDogCard.js";
 import showForm from "./showForm.js";
+import isGoodDog from "./isGoodDog.js";
 
 // form
 const addButton = document.getElementById("dogs-list__button--add");
@@ -35,10 +36,14 @@ form.addEventListener("submit", (event) => {
   createDogCard(newDog);
 });
 
-const changeIsGoodDog = (dog) => {
-  !dog.isGoodDog;
-};
 // ********* EXTENDED ********* //
-dogBtn.addEventListener("click", () => {
-  changeIsGoodDog;
+dogBtn.addEventListener("click", (event) => {
+  const isGoodDog = document.getElementById("is-good-dog");
+  if (event.target.textContent === "Bad Dog") {
+    event.target.textContent = "Good Dog";
+    isGoodDog.innerHTML = "<em>Is naughty?</em> Yes!</p>";
+  } else if (event.target.textContent === "Good Dog") {
+    event.target.textContent = "Bad Dog";
+    isGoodDog.innerHTML = "<em>Is naughty?</em> No!</p>";
+  }
 });

@@ -12,7 +12,6 @@ const createDogCard = (dog) => {
   dogName.innerText = dog.name;
   img.src = dog.image;
   bioText.innerText = dog.bio;
-
   isGoodDog(dog);
 };
 
