@@ -19,22 +19,27 @@ const formName = document.getElementById("name");
 const formImg = document.getElementById("image");
 const formBio = document.getElementById("bio");
 
-// ********* PART 1 ********* //
-data.forEach((dog) => {
-  // Header
+const createDogListItem = (name) => {
   const dogListButton = document.createElement("li");
   dogListButton.setAttribute("class", "dogs-list__button");
-  dogListButton.innerText = dog.name;
+  dogListButton.innerText = name;
   dogsList.append(dogListButton);
-
-  // when dog name is clicked
-  dogListButton.addEventListener("click", () => {
+  return dogListButton;
+};
+// ********* PART 1 ********* //
+data.forEach((dog) => {
+  const createDogCard = (dog) => {
     formContainer.style.display = "none";
     dogCardContainer.style.display = "block";
     dogName.innerText = dog.name;
     img.src = dog.image;
     bioText.innerText = dog.bio;
-  });
+  };
+  // Header
+  const dogListItem = createDogListItem(dog.name);
+
+  // when dog name is clicked
+  dogListItem.addEventListener("click", createDogCard(dog));
 });
 
 // ********* PART 2 ********* //
@@ -46,22 +51,10 @@ addButton.addEventListener("click", () => {
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  data.push({
+  data.unshift({
     name: formName.value,
     bio: formBio.value,
     isGoodDog: true,
     image: formImg.value,
-  });
-  const newDogListButton = document.createElement("li");
-  newDogListButton.setAttribute("class", "dogs-list__button");
-  newDogListButton.innerText = formName.value;
-  dogsList.append(newDogListButton);
-});
-
-// ********* Extended ********* //
-dogBtn.addEventListener("click", () => {
-  data.forEach((dog) => {
-    dog.isGoodDog ? dog.isGoodDog === false : dog.isGoodDog === true;
-    console.log(dog.name, dog.isGoodDog);
   });
 });
