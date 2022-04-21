@@ -35,7 +35,10 @@ form.addEventListener("submit", (event) => {
   createDogCard(newDog);
 });
 
+const changeIsGoodDog = (dog) => {
+  !dog.isGoodDog;
+};
 // ********* EXTENDED ********* //
 dogBtn.addEventListener("click", () => {
-  console.log("hi");
+  changeIsGoodDog;
 });
