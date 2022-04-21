@@ -1,17 +1,9 @@
 import createDogListItem from "./createDogListItem.js";
 import createDogCard from "./createDogCard.js";
-
-//  dog card
-const dogCardContainer = document.getElementById("main__dog-section-dog");
-dogCardContainer.style.display = "none";
-
-const isNaughty = document.getElementById("is-naughty");
-const dogBtn = document.getElementById("dogBtn");
+import showForm from "./showForm.js";
 
 // form
 const addButton = document.getElementById("dogs-list__button--add");
-const formContainer = document.getElementById("main__dog-section-form");
-formContainer.style.display = "none";
 const form = document.querySelector("form");
 const formName = document.getElementById("name");
 const formImg = document.getElementById("image");
@@ -26,18 +18,21 @@ data.forEach((dog) => {
 });
 
 // ********* PART 2 ********* //
-// addButton.addEventListener("click", () => {
-//   dogName.innerText = "add a new Dog";
-//   formContainer.style.display = "block";
-//   dogCardContainer.style.display = "none";
-// });
+addButton.addEventListener("click", () => {
+  showForm();
+});
 
-// form.addEventListener("submit", (event) => {
-//   event.preventDefault();
-//   data.unshift({
-//     name: formName.value,
-//     bio: formBio.value,
-//     isGoodDog: true,
-//     image: formImg.value,
-//   });
-// });
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const newDog = {
+    name: event.target[0].value,
+    bio: event.target[2].value,
+    isGoodDog: true,
+    image: event.target[1].value,
+  };
+
+  data.unshift(newDog);
+  createDogListItem(event.target[0].value);
+  createDogCard(newDog);
+});
