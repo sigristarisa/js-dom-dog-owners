@@ -5,9 +5,7 @@ import showForm from "./showForm.js";
 // form
 const addButton = document.getElementById("dogs-list__button--add");
 const form = document.querySelector("form");
-const formName = document.getElementById("name");
-const formImg = document.getElementById("image");
-const formBio = document.getElementById("bio");
+const dogBtn = document.getElementById("dogBtn");
 
 // ********* PART 1 ********* //
 data.forEach((dog) => {
@@ -33,6 +31,11 @@ form.addEventListener("submit", (event) => {
   };
 
   data.unshift(newDog);
-  createDogListItem(event.target[0].value);
+  createDogListItem(newDog.name);
   createDogCard(newDog);
+});
+
+// ********* EXTENDED ********* //
+dogBtn.addEventListener("click", () => {
+  console.log("hi");
 });
